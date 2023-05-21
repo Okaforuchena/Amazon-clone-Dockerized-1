@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Trivy Scan (Aqua)') {
             steps {
-                sh 'trivy image $APP_NAME:$BUILD_NUMBER'
+                sh 'trivy image dngwenyi/delphine-ibtapp:$BUILD_NUMBER'
             }
        }
         stage('push image') {
