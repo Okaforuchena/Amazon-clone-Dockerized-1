@@ -5,8 +5,8 @@ pipeline {
         timeout(time: 10, unit: 'MINUTES')
      }
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('Delphine-dockerhub')
-    APP_NAME = "dngwenyi/delphine-ibtapp"
+    DOCKERHUB_CREDENTIALS = credentials('kash-dockerhub')
+    APP_NAME = "dngwenyi/kash-project"
     }
     stages { 
         stage('SCM Checkout') {
@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Trivy Scan (Aqua)') {
             steps {
-                sh 'trivy image dngwenyi/delphine-ibtapp:$BUILD_NUMBER'
+                sh 'trivy image dngwenyi/kash-project:$BUILD_NUMBER'
             }
        }
         stage('push image') {
