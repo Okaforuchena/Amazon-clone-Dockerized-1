@@ -5,13 +5,13 @@ pipeline {
         timeout(time: 10, unit: 'MINUTES')
      }
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('delco-dockerhub')
-    APP_NAME = "dngwenyi/delco-app"
+    DOCKERHUB_CREDENTIALS = credentials('uo-dockerhub-credentials')
+    APP_NAME = "okaforuchena/amazon"
     }
     stages { 
         stage('SCM Checkout') {
             steps{
-           git branch: 'main', url: 'https://github.com/dngwenyi/Amazon-clone-Dockerized.git'
+           git branch: 'main', url: 'https://github.com/Okaforuchena/Amazon-clone-Dockerized-1.git'
             }
         }
         // run sonarqube test
