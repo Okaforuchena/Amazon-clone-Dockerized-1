@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Trivy Scan (Aqua)') {
             steps {
-                 sh 'trivy image okaforuchena/kash-p:$BUILD_NUMBER'
+                 sh 'trivy image okaforuchena/amazon-p:$BUILD_NUMBER'
             }
        }
         stage('push image') {
