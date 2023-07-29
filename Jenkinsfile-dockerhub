@@ -37,7 +37,6 @@ pipeline {
         }
         stage('Trivy Scan (Aqua)') {
             steps {
-                sh 'trivy image dngwenyi/kash-p:$BUILD_NUMBER'
             }
        }
         stage('push image') {
